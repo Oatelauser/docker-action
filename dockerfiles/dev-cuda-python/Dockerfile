@@ -13,7 +13,7 @@ RUN sed -i 's/archive.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list \
     && ./configure --enable-optimizations --with-lto \
     && make -j$(nproc) && make install \
     && cp /usr/local/bin/python3.12 /usr/local/bin/python \
-    && cp cp /usr/local/bin/pip3 /usr/local/bin/pip \
+    && cp /usr/local/bin/pip3 /usr/local/bin/pip \
     && cd .. && rm -rf Python-3.12.0.tar.xz Python-3.12.0 \
     # 设置pip镜像源
     && pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple/ \
