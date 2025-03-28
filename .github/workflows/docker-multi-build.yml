@@ -17,7 +17,7 @@ jobs:
       matrix:
         dockerfile: 
           - { path: "dockerfiles/dev-cuda-python/Dockerfile", image: "dev-cuda-python" }
-          - { path: "dockerfiles/dev-cuda-pytorch-python/Dockerfile", image: "dev-cuda-pytorch-python" }
+#          - { path: "dockerfiles/dev-cuda-pytorch-python/Dockerfile", image: "dev-cuda-pytorch-python" }
     steps:
       - name: Checkout
         uses: actions/checkout@v4
