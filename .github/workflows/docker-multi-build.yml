@@ -17,7 +17,7 @@ jobs:
       matrix:
         dockerfile: 
 #          - { path: "dockerfiles/dev-cuda-python/Dockerfile", image: "oatelauser/dev-python:3.12-cuda-12.2.2-runtime-ubuntu22.04" }
-          - { path: "dockerfiles/dev-cuda-pytorch-python/Dockerfile", image: "oatelauser/dev-python:3.12-pytorch-2.5.1-cuda12.1-cudnn9-devel" }
+          - { path: "dockerfiles/dev-cuda-pytorch-python/Dockerfile", image: "oatelauser/dev-python" }
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -39,5 +39,4 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ${{ matrix.dockerfile.image }}:latest
-            ${{ matrix.dockerfile.image }}:${{ github.sha }}
+            ${{ matrix.dockerfile.image }}:3.12-pytorch2.5.1-cuda12.1-cudnn9-devel

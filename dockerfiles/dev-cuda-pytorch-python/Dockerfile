@@ -19,6 +19,5 @@ RUN sed -i 's/archive.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list \
     && rm -rf /var/lib/apt/lists/* \
     && rm -rf /var/log/*.log
 
-
 EXPOSE 22
 ENTRYPOINT ["/usr/sbin/sshd", "-D"]
