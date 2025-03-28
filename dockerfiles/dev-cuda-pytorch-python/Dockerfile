@@ -3,6 +3,7 @@ FROM pytorch/pytorch:2.5.1-cuda12.1-cudnn9-devel
 
 LABEL authors="Oatelauser"
 
+
 RUN sed -i 's/archive.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list \
     && sed -i 's/security.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list \
     && apt update \
