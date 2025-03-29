@@ -1,5 +1,5 @@
 # ubuntu22.04
-FROM nvidia/cuda:12.2.2-runtime-ubuntu22.04
+FROM nvidia/cuda:12.2.2-cudnn8-runtime-ubuntu22.04
 
 LABEL authors="Oatelauser"
 

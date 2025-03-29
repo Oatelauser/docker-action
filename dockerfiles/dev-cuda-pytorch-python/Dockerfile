@@ -1,5 +1,5 @@
 # 操作系统ubuntu22.04
-FROM pytorch/pytorch:2.5.1-cuda12.1-cudnn9-devel
+FROM pytorch/pytorch:2.5.1-cuda12.1-cudnn9-runtime
 
 LABEL authors="Oatelauser"
 
