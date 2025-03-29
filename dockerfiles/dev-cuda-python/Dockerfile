@@ -1,6 +1,7 @@
 # ubuntu22.04
 FROM nvidia/cuda:12.2.2-cudnn8-runtime-ubuntu22.04
 
+ENV PYTHONUNBUFFERED 1
 LABEL authors="Oatelauser"
 
 RUN sed -i 's/archive.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list \
@@ -15,8 +16,6 @@ RUN sed -i 's/archive.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list \
     && cp /usr/local/bin/python3.12 /usr/local/bin/python \
     && cp /usr/local/bin/pip3 /usr/local/bin/pip \
     && cd .. && rm -rf Python-3.12.0.tar.xz Python-3.12.0 \
-    # 设置pip镜像源
-    && pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple/ \
     # 构建SSH
     && apt install -y openssh-server \
     && mkdir /var/run/sshd \

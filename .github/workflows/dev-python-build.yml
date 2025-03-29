@@ -1,9 +1,9 @@
-name: Docker Build & Push
+name: dev-python
 on:
   push:
     branches: [ main ]
     paths:
-      - 'dockerfiles/**'  # 监控指定目录变更触发构建
+      - 'dockerfiles/dev-python/**'  # 监控指定目录变更触发构建
   workflow_dispatch:
     inputs:
       dockerfiles:
@@ -16,7 +16,7 @@ jobs:
     strategy:
       matrix:
         dockerfile: 
-          - { path: "dockerfiles/dev-cuda-python/Dockerfile", image: "oatelauser/dev-python" }
+          - { path: "dockerfiles/dev-python/Dockerfile", image: "oatelauser/dev-python" }
 #          - { path: "dockerfiles/dev-cuda-pytorch-python/Dockerfile", image: "oatelauser/dev-python" }
     steps:
       - name: Before freeing up disk space
@@ -68,4 +68,4 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ${{ matrix.dockerfile.image }}:3.12-cuda-12.2.2-runtime-ubuntu22.04
+            ${{ matrix.dockerfile.image }}:3.12
