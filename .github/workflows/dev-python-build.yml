@@ -16,7 +16,7 @@ jobs:
     strategy:
       matrix:
         dockerfile: 
-          - { path: "dockerfiles/dev-python/Dockerfile", image: "oatelauser/dev-python" }
+          - { path: "dockerfiles/dev-python/Dockerfile", image: "registry.cn-hangzhou.aliyuncs.com/oatelauser/dev-python" }
 #          - { path: "dockerfiles/dev-cuda-pytorch-python/Dockerfile", image: "oatelauser/dev-python" }
     steps:
       - name: Before freeing up disk space

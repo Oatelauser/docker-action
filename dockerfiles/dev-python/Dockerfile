@@ -17,6 +17,5 @@ RUN sed -i 's|http://[^/]*|https://mirrors.aliyun.com|g' /etc/apt/sources.list.d
     && rm -rf /var/lib/apt/lists/* \
     && rm -rf /var/log/*.log
 
-
 EXPOSE 22
 ENTRYPOINT ["/usr/sbin/sshd", "-D"]
